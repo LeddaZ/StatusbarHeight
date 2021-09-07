@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="titleStr">L\'altezza della barra di stato è</string>
+    <string name="refreshStr">Aggiorna</string>
 </resources>

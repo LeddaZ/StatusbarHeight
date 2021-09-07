@@ -1,19 +1,23 @@
 package it.leddaz.statusbarheight
 
-import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import android.graphics.drawable.ColorDrawable
+import android.view.View
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         display()
+        val colorDrawable = ColorDrawable(Color.parseColor("#B00020"))
+        supportActionBar?.setBackgroundDrawable(colorDrawable)
     }
 
-    fun getStatusBarHeight(): Int {
+    private fun getStatusBarHeight(): Int {
         var result = 0
         val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
         if (resourceId > 0) {
@@ -24,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun display() {
         val height = findViewById<TextView>(R.id.heightStr)
-        height.text = getStatusBarHeight().toString() + "px"
+        val str = getStatusBarHeight().toString() + "px"
+        height.text = str
+    }
+
+    fun sendMessage(view: View) {
+        display()
     }
 }
