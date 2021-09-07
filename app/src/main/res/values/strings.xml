@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">StatusbarHeight</string>
+    <string name="height" translatable="false">0</string>
+    <string name="titleStr">The statusbar height is</string>
+</resources>
